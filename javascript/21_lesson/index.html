@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Course</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <nav>
+      <h1>Event Listeners</h1>
+    </nav>
+    <main>
+      <section id="view2" class="view2 darkblue">
+        <div class="black">
+          <h2>My 2nd View</h2>
+        </div>
+      </section>
+      <section id="view3" class="view3">
+        <form id="myForm">
+          <label for="myTextInput">Text Input:</label>
+          <input
+            type="text"
+            id="myTextInput"
+            name="myTextInput"
+            autocomplete="off"
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+      <section class="event-bubbling">
+        <div id="grandparent">
+          <div id="parent">
+            <button id="child">Click Me!</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script defer src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import "tailwindcss";
+@import "./utilities";
+@import "./variants";
+
+/* Documentation: https://tailwindcss.com/docs/theme */
+/* Extending default namespaces: https://tailwindcss.com/docs/theme#theme-variable-namespaces */
+@theme {
+  /* Variables */
+  --tw-color-red-500: rgb(251, 44, 54);
+  --tw-color-pink-500: rgb(255, 192, 203);
+  --default-green: #07b992;
+
+  /* Font family */
+  --font-nunito: Nunito, sans-serif;
+
+  /* Breakpoints - Min width */
+  --breakpoint-xs: 20rem;
+  /* 320px */
+  --breakpoint-mobile-md: 23.4375rem;
+  /* 375px */
+  --breakpoint-mobile-lg: 26.5625rem;
+  /* 425px */
+  --breakpoint-tablet-sm: 34.375rem;
+  /* 550px */
+  --breakpoint-tablet-md: 40rem;
+  /* 640px */
+  --breakpoint-tablet-lg: 48rem;
+  /* 768px */
+  --breakpoint-laptop-sm: 64rem;
+  /* 1024px */
+  --breakpoint-laptop-md: 80rem;
+  /* 1280px */
+  --breakpoint-laptop-lg: 90rem;
+  /* 1440px */
+  --breakpoint-4K: 160rem;
+  /* 2560px */
+}
+
+/* https://tailwindcss.com/docs/adding-custom-styles#using-custom-css */
+@layer base {
+  * {
+    font-family: var(--font-nunito);
+  }
+  @keyframes rotate-to-45 {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    50% {
+      transform: rotate(45deg);
+    }
+  
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+}

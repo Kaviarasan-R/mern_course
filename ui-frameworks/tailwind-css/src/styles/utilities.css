@@ -1,0 +1,55 @@
+/* https://tailwindcss.com/docs/adding-custom-styles#simple-utilities */
+@utility text-custom-pink {
+  color: var(--tw-color-pink-500);
+}
+
+@utility hoverable {
+  @apply hover:cursor-pointer hover:bg-white hover:text-black;
+}
+
+@utility custom-rotate {
+  animation: rotate-to-45 1s ease-in-out infinite;
+}
+
+@utility btn-primary {
+  border-radius: calc(infinity * 1px);
+  background-color: var(--color-violet-500);
+  padding-inline: --spacing(5);
+  padding-block: --spacing(2);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
+
+  &:hover {
+    /* This only accepts pseudo-classes like hover, focus, active, disabled, where, etc,. */
+    /* By wrapping it in @media (hover: hover), you ensure: accidental hover effects on devices that don’t have a mouse.*/
+    @media (hover: hover) and (pointer: fine) {
+      background-color: var(--color-violet-700);
+      cursor: pointer;
+    }
+  }
+
+  /* https://tailwindcss.com/docs/adding-custom-styles#using-variants */
+  /* It includes pseudo-classes and tailwind css variants */
+  @variant hover {
+    background-color: var(--color-blue-700);
+    cursor: pointer;
+  }
+
+  @variant dark {
+    background-color: oklch(71.8% 0.202 349.761);
+    @variant hover {
+      text-decoration: underline;
+    }
+  }
+
+  /* Generated css for @variant dark
+  @media (prefers-color-scheme: dark) {
+    .btn-primary { ... }
+  } */
+}
+
+/* https://tailwindcss.com/docs/adding-custom-styles#complex-utilities */
+@utility clr-* {
+  color: --value(--default-*);
+}

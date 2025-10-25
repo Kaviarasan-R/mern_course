@@ -1,0 +1,22 @@
+/* https://tailwindcss.com/docs/adding-custom-styles#adding-custom-variants */
+
+/* Whenever a utility class is prefixed with theme-midnight:,
+apply it only if the element is inside a parent with data-theme="midnight" */
+@custom-variant theme-midnight {
+  &:where([data-theme="midnight"] *) {
+    @slot;
+  }
+}
+
+/* Matches either no [data-theme] or [data-theme="light"];
+Actually defines a variant called dark: that applies in light mode or when no theme is set. */
+@custom-variant dark {
+  &:where(:not([data-theme]), [data-theme="light"]) {
+    @slot;
+  }
+}
+
+/* Shorthand syntax 
+@custom-variant theme-midnight (&:where([data-theme="midnight"] *)); 
+@custom-variant dark (&:where(:not([data-theme]), [data-theme="light"]));
+*/
